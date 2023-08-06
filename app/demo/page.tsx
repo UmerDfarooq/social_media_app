@@ -1,5 +1,10 @@
 import React from "react";
 
+interface character {
+  id: string;
+  name: string;
+  image: string;
+}
 const delay = (duration: number) =>
   new Promise((resolve) => setTimeout(resolve, duration));
 
@@ -16,10 +21,10 @@ async function page() {
   console.log(data);
   return (
     <div className="min-h-screen  overflow-auto bg-blue-500 items-center justify-center flex flex-col">
-      {data.map((obj, index) => (
+      {data.map((obj: character) => (
         <div
           key={obj.id}
-          className="bg-white p-2 mt-2 mb-2 rounded-md flex items-center flex-col h-60"
+          className="bg-white dark:bg-black p-2 mt-2 mb-2 rounded-md flex items-center flex-col h-60"
         >
           <span>{obj.name}</span>
           <img className="h-3/4" src={obj.image as string} />
