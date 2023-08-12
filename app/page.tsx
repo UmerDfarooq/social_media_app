@@ -1,11 +1,7 @@
-import Image from "next/image";
-import { ModeToggle } from "../components/ui/dark-mode";
-import Sidebar from "../components/sidebar/page";
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between p-24">
-      {/* <Sidebar /> */}
+    <div className=" flex  items-center  justify-center  bg-slate-500 w-full">
       Children Content
-    </main>
+    </div>
   );
 }
