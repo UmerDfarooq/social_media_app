@@ -21,12 +21,9 @@ async function page() {
   const data = await getCharachters();
   console.log(data);
   return (
-    <div className="max-h-full  items-center flex flex-col overflow-auto ">
+    <div className="grid grid-cols-2 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-2 gap-4 p-4">
       {data.map((obj: character) => (
-        <div
-          key={obj.id}
-          className="  mt-2 mb-2 rounded-md flex items-center flex-col "
-        >
+        <div key={obj.id} className="  mt-2 mb-2 rounded-md ">
           <ImageCard
             title={obj.id}
             description={obj.name}

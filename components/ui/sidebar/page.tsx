@@ -2,6 +2,7 @@ import React from "react";
 import { Sidebar_Items } from "./sidebar-items";
 import FarmImage from "@/app/Images/Avatar.jpg";
 import Image from "next/image";
+import Link from "next/link";
 const Sidebar = () => {
   return (
     <>
@@ -19,7 +20,7 @@ const Sidebar = () => {
               key={index}
               className="flex items-center justify-center p-4 m-1 text-white transition-colors duration-300 rounded hover:text-white-100 hover:bg-white hover:m-1 hover:rounded hover:font-bold hover:bg-opacity-20"
             >
-              <a href="#">{link.name}</a>
+              <Link href={link.route}>{link.name}</Link>
             </div>
           ))}
         </div>

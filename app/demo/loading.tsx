@@ -3,16 +3,12 @@ import React from "react";
 
 function loading() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen overflow-auto bg-blue-500">
+    <div className="grid grid-cols-4 gap-4 p-4">
       {Array.from({ length: 12 }, (_, i) => i + 1).map((index) => (
-        <div
+        <Skeleton
           key={index}
-          className="flex flex-col items-center w-1/6 p-2 mt-2 mb-2 bg-white rounded-md h-60"
-        >
-          <Skeleton className="w-1/2 h-6 bg-gray-300"></Skeleton>
-
-          <Skeleton className="min-w-full mt-2 bg-gray-300 h-3/4"></Skeleton>
-        </div>
+          className="mt-2 mb-2 rounded-md  bg-slate-400 h-96 "
+        ></Skeleton>
       ))}
     </div>
   );

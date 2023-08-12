@@ -17,15 +17,14 @@ interface imageCardProps {
 function ImageCard(props: imageCardProps) {
   const { title, description, image, content } = props;
   return (
-    <Card>
+    <Card className="transition-transform transform hover:scale-110 hover:cursor-pointer">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
         <div>
-          <img src={image} alt="card img" className="h-3/4" />
-          <p>{content}</p>
+          <img src={image} alt="card img" />
         </div>
       </CardContent>
       <CardFooter>
