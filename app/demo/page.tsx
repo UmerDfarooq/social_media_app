@@ -1,3 +1,4 @@
+import ImageCard from "@/components/ImageCard";
 import React from "react";
 
 interface character {
@@ -11,7 +12,7 @@ const delay = (duration: number) =>
 const getCharachters = async () => {
   await delay(2000);
   const response = await fetch(
-    "https://rickandmortyapi.com/api/character/1,183,2,5,37,9,120,10,11,12,15"
+    "https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8,9,10"
   );
   const data = await response.json();
   return data;
@@ -20,14 +21,18 @@ async function page() {
   const data = await getCharachters();
   console.log(data);
   return (
-    <div className="min-h-screen  overflow-auto bg-blue-500 items-center justify-center flex flex-col">
+    <div className="max-h-full  items-center flex flex-col overflow-auto ">
       {data.map((obj: character) => (
         <div
           key={obj.id}
-          className="bg-white dark:bg-black p-2 mt-2 mb-2 rounded-md flex items-center flex-col h-60"
+          className="  mt-2 mb-2 rounded-md flex items-center flex-col "
         >
-          <span>{obj.name}</span>
-          <img className="h-3/4" src={obj.image as string} />
+          <ImageCard
+            title={obj.id}
+            description={obj.name}
+            image={obj.image}
+            key={obj.id}
+          />
         </div>
       ))}
     </div>

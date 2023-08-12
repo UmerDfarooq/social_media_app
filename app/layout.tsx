@@ -5,6 +5,7 @@ import { ThemeProvider } from "../components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 import Sidebar from "@/components/ui/sidebar/page";
+import { ModeToggle } from "@/components/ui/dark-mode";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,17 +22,14 @@ export default function RootLayout({
       <head></head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div>
-            {/* <h1>Mode Toggle</h1> */}
-            {/* <ModeToggle /> */}
-          </div>
           <div className="flex h-screen  ">
             <div className="hidden sm:block bg-sidebar flex-none w-1/7">
               <Sidebar />
             </div>
 
-            <div className="flex-grow bg-red-500 ">
+            <div className="flex-grow bg-background   overflow-auto ">
               {/* Children section content goes here */}
+              <ModeToggle />
               {children}
             </div>
           </div>
