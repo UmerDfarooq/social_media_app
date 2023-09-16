@@ -17,7 +17,7 @@ interface imageCardProps {
 function ImageCard(props: imageCardProps) {
   const { title, description, image, content } = props;
   return (
-    <Card className="transition-transform transform hover:scale-110 hover:cursor-pointer">
+    <Card className="transition-transform duration-500 transform hover:scale-110 hover:cursor-pointer hover:bg-rose-400">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
